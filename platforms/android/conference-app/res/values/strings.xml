@@ -3,9 +3,11 @@
 
     <string name="app_name">ConnectWE</string>
     <string name="title_home">Home</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
+    <string name="title_section1">Day 1</string>
+    <string name="title_section2">Day 2</string>
+    <string name="date_day1">Wednesday June 26</string>
+    <string name="date_day2">Thursday June 27</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="connectwe">CONNECT Web Experience is a unique opportunity to aggregate CQ developers from partners and customers, as well as Adobe CQ experts, to share their experiences, the best development tools and practices, and learn about the most demanded deep technical dives.</string>
 
 </resources>
