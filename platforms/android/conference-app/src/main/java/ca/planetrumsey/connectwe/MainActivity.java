@@ -1,4 +1,4 @@
-package ca.planetrumsey.conference.aem;
+package ca.planetrumsey.connectwe;
 
 import java.util.Locale;
 
@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
 

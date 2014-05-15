@@ -1,4 +1,4 @@
-package ca.planetrumsey.conference;
+package ca.planetrumsey.connectwe;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

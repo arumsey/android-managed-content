@@ -1,4 +1,4 @@
-package ca.planetrumsey.conference.aem;
+package ca.planetrumsey.connectwe.aem;
 
 import android.app.Activity;
 import android.content.Context;
