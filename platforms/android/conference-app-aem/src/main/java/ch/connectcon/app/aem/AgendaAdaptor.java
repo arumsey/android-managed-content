@@ -56,8 +56,8 @@ public class AgendaAdaptor extends ArrayAdapter<JSONObject> {
             TextView text = (TextView) v.findViewById(R.id.label);
             text.setText(c.getString("title"));
 
-            TextView text1 = (TextView) v.findViewById(R.id.description);
-            text1.setText(c.getString("description"));
+            TextView text1 = (TextView) v.findViewById(R.id.time);
+            text1.setText(c.getString("time"));
         } catch (JSONException e) {
 
         }

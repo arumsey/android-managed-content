@@ -1,17 +1,18 @@
 package ch.connectcon.app;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class SectionFragment extends ListFragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     int mCurrentPosition = -1;
-    JSONObject data = null;
+    final List<JSONObject> mCurrentListValues = new ArrayList<JSONObject>();
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -48,7 +49,6 @@ public class SectionFragment extends ListFragment {
             // Set article based on argument passed in
             mCurrentPosition = args.getInt(ARG_SECTION_NUMBER);
         }
-        data = getJsonData();
     }
 
     @Override
@@ -64,36 +64,57 @@ public class SectionFragment extends ListFragment {
 
         View rootView = inflater.inflate(R.layout.section_view_frag, container, false);
 
-        List<JSONObject> values = new ArrayList<JSONObject>();
+        mCurrentListValues.clear();
+        JSONObject data = ((MainActivity) getActivity()).getConferenceData();
+
         try {
             JSONArray allSessions = data.getJSONArray("sessions");
             for (int i = 0; i < allSessions.length(); i++)
             {
                 JSONObject session = allSessions.getJSONObject(i);
                 if (session.getInt("position") == mCurrentPosition) {
-                    values.add(session);
+                    mCurrentListValues.add(session);
                 }
             }
         } catch (JSONException e) {
 
         }
 
-        AgendaAdaptor adapter = new AgendaAdaptor(inflater.getContext(), values);
+        AgendaAdaptor adapter = new AgendaAdaptor(inflater.getContext(), mCurrentListValues);
         setListAdapter(adapter);
 
-        updateSectionView(mCurrentPosition, rootView);
+        updateSectionView(rootView, data, mCurrentPosition);
 
         return rootView;
     }
 
-    public void updateSectionView(int position, View view) {
-        TextView section_title = (TextView) view.findViewById(R.id.title);
-        if (position == 1) {
-            section_title.setText(R.string.date_day1);
-        } else if (position == 2) {
-            section_title.setText(R.string.date_day2);
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        try {
+            JSONObject item = mCurrentListValues.get(position);
+            if (item != null){
+                String url = item.getString("url");
+                if (url != null && url.length() > 0) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                    browserIntent.setData(Uri.parse(url));
+                    browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getActivity().getApplicationContext().startActivity(browserIntent);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-        mCurrentPosition = position;
+    }
+
+    public void updateSectionView(View view, JSONObject data, int position) {
+        TextView section_title = (TextView) view.findViewById(R.id.title);
+        try {
+            JSONArray allDays = data.getJSONArray("days");
+            JSONObject day = allDays.getJSONObject(position - 1);
+            section_title.setText(day.getString("date"));
+        } catch (JSONException e) {
+
+        }
     }
 
     @Override
@@ -104,28 +125,5 @@ public class SectionFragment extends ListFragment {
         outState.putInt(ARG_SECTION_NUMBER, mCurrentPosition);
     }
 
-    private JSONObject getJsonData() {
 
-        try {
-
-            InputStream is = getActivity().getAssets().open("data.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-
-            String json = new String(buffer, "UTF-8");
-
-            return new JSONObject(json);
-
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-
-    }
 }

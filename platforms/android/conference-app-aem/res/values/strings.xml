@@ -3,10 +3,7 @@
 
     <string name="app_name">Connect WE</string>
     <string name="title_home">Home</string>
-    <string name="title_section1">Day 1</string>
-    <string name="title_section2">Day 2</string>
-    <string name="date_day1">Wednesday June 26</string>
-    <string name="date_day2">Thursday June 27</string>
+    <string name="title_unknown">Day</string>
     <string name="action_settings">Settings</string>
 
 </resources>

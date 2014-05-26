@@ -10,7 +10,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Locale;
 
 
@@ -31,10 +36,15 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
      */
     ViewPager mViewPager;
 
+    JSONObject mData = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //get conference data
+        mData = getJsonData();
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
@@ -42,7 +52,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), mData);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -69,6 +79,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                             .setText(mSectionsPagerAdapter.getPageTitle(i))
                             .setTabListener(this));
         }
+
     }
 
 
@@ -110,14 +121,46 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
 
+    public JSONObject getConferenceData() {
+        return mData;
+    }
+
+    private JSONObject getJsonData() {
+
+        try {
+
+            InputStream is = getAssets().open("data.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            String json = new String(buffer, "UTF-8");
+
+            return new JSONObject(json);
+
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
     /**
      * A {@link android.support.v4.app.FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        JSONObject mData = null;
+
+        public SectionsPagerAdapter(FragmentManager fm, JSONObject data) {
             super(fm);
+            this.mData = data;
         }
 
         @Override
@@ -138,15 +181,17 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_home).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section2).toUpperCase(l);
+            if (position == 0) {
+                return getString(R.string.title_home).toUpperCase(l);
+            } else {
+                try {
+                    JSONArray allDays = this.mData.getJSONArray("days");
+                    JSONObject day = allDays.getJSONObject(position - 1);
+                    return day.getString("title").toUpperCase(l);
+                } catch (JSONException e) {
+                    return getString(R.string.title_unknown).toUpperCase(l) + " " + position;
+                }
             }
-            return null;
         }
     }
 

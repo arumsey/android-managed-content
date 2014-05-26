@@ -3,33 +3,192 @@
         {
             "position": 1,
             "title": "Day 1",
-            "date": "Wednesday June 26"
+            "date": "Wednesday June 25"
         },
         {
             "position": 2,
             "title": "Day 2",
-            "date": "Thursday June 27"
+            "date": "Thursday June 26"
         }
     ],
     "sessions" : [
         {
             "position": 1,
-            "title": "Preso 1",
-            "description": "this is the description",
-            "url": "http://www.adobe.com"
+            "title": "Check in and Welcome Coffee",
+            "time": "8:30 - 9:00",
+            "url": ""
         },
         {
             "position": 1,
-            "title": "Preso 2",
-            "description": "this is the description",
-            "url": "http://www.adobe.com"
+            "title": "Introduction to the Conference",
+            "time": "9:00 - 9:15",
+            "url": ""
+        },
+        {
+            "position": 1,
+            "title": "Keynote - Sling DevOps - the next frontier?",
+            "time": "9:15 - 10:00",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/bertrand-delacretaz.html"
+        },
+        {
+            "position": 1,
+            "title": "Coffee Break",
+            "time": "10:00 - 10:30",
+            "url": ""
+        },
+        {
+            "position": 1,
+            "title": "Adobe Managed Services: Managing and maintaining CQ in AWS",
+            "time": "10:30 - 11:15",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/adam-pazik.html"
+        },
+        {
+            "position": 1,
+            "title": "Master Chef class: learn how to quickly cook delightful CQ infrastructures",
+            "time": "11:15 - 12:00",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/francois-le-droff.html"
+        },
+        {
+            "position": 1,
+            "title": "Lunch",
+            "time": "12:00 - 13:00",
+            "url": ""
+        },
+        {
+            "position": 1,
+            "title": "Integration Patterns - coupling Adobe AEM to external Systems",
+            "time": "13:00 - 13:45",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/heiko-voigt.html"
+        },
+        {
+            "position": 1,
+            "title": "DTA + AEM",
+            "time": "13:45 - 14:30",
+            "url": ""
+        },
+        {
+            "position": 1,
+            "title": "Coffee Break",
+            "time": "14:30 - 14:45",
+            "url": ""
+        },
+        {
+            "position": 1,
+            "title": "Provisioning with Apache Felix",
+            "time": "14:45 - 15:30",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/sascha-brinkmann.html"
+        },
+        {
+            "position": 1,
+            "title": "The challenge of implementing modular front-end in a AEM environment. A case study",
+            "time": "15:30 - 16:15",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/rene-bach.html"
+        },
+        {
+            "position": 1,
+            "title": "Coffee Break",
+            "time": "16:15 - 16:30",
+            "url": ""
+        },
+        {
+            "position": 1,
+            "title": "User Interface customization for AEM6",
+            "time": "16:30 - 17:15",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/damien-antipa.html"
+        },
+        {
+            "position": 1,
+            "title": "Oak for developers: What’s new?",
+            "time": "17:15 - 17:45",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/ben-zahler.html"
+        },
+        {
+            "position": 1,
+            "title": "OAuth Server functionality in Granite",
+            "time": "17:45 - 18:00",
+            "url": ""
+        },
+        {
+            "position": 1,
+            "title": "Drinks",
+            "time": "18:00 - 19:00",
+            "url": ""
         },
         {
             "position": 2,
-            "title": "Preso 3",
-            "description": "this is the description",
-            "url": "http://www.adobe.com"
+            "title": "Introducing NEBA: Spring and POJOs for Sling",
+            "time": "9:00 - 9:45",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/olaf-otto.html"
+        },
+        {
+            "position": 2,
+            "title": "CQ Development before and after NEBA",
+            "time": "9:45 - 10:30",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/christoph-huber.html"
+        },
+        {
+            "position": 2,
+            "title": "Coffee Break",
+            "time": "10:30 - 10:45",
+            "url": ""
+        },
+        {
+            "position": 2,
+            "title": "Different approaches of skinning the components and why a new component is not always a good idea.",
+            "time": "10:45 - 11:15",
+            "url": ""
+        },
+        {
+            "position": 2,
+            "title": "Sightly templating... AEM app development",
+            "time": "11:15 - 11:45",
+            "url": ""
+        },
+        {
+            "position": 2,
+            "title": "Slice your code in AEM6 and my first sightly project",
+            "time": "11:45 - 12:15",
+            "url": ""
+        },
+        {
+            "position": 2,
+            "title": "Lunch",
+            "time": "12:15 - 13:15",
+            "url": ""
+        },
+        {
+            "position": 2,
+            "title": "Developing Interactive Content-Centric mobile apps with AEM’s Integration with DPS",
+            "time": "13:15 - 13:45",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/john-fait.html"
+        },
+        {
+            "position": 2,
+            "title": "Mobile apps: Made and managed in AEM + ContentSync + Analytics / Mobile Services",
+            "time": "13:45 - 14:30",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/bruce-lefebvre.html"
+        },
+        {
+            "position": 2,
+            "title": "Coffee Break",
+            "time": "14:30 - 14:45",
+            "url": ""
+        },
+        {
+            "position": 2,
+            "title": "Delivering Managed Content to Your Native Apps ",
+            "time": "14:45 - 15:15",
+            "url": "http://www.connectcon.ch/2014/en/speakers2/anthony-rumsey.html"
+        },
+        {
+            "position": 2,
+            "title": "Closing",
+            "time": "15:15 - 15:30",
+            "url": ""
         }
 
+
+
     ]
+
 }
