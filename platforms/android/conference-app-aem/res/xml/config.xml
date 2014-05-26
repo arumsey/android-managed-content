@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="info.geometrixx.webviewapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="ch.connectcon.app.aem" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
@@ -20,15 +20,18 @@
     <feature name="Zip">
         <param name="android-package" value="org.apache.cordova.Zip" />
     </feature>
-    <name>Geometrixx Webview</name>
-    <preference name="phonegap-version" value="3.3.0" />
+    <feature name="Navigation">
+        <param name="android-package" value="ch.connectcon.app.aem.plugin.Navigation" />
+    </feature>
+    <name>ConnectWebEx</name>
+    <preference name="phonegap-version" value="3.4.0" />
     <description>
         Sample to illustrate building a single page app using AEM
     </description>
     <author href="http://adobe.com">
         AEM Team
     </author>
-    <content src="content/phonegap/geometrixx/apps/ng-geometrixx-webview/splash.html" />
+    <content src="content/phonegap/connectcon/apps/ng-homepage-webview/splash.html" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="orientation" value="default" />
@@ -52,7 +55,5 @@
     <access origin="*" />
     <gap:plugin name="org.apache.cordova.file" version="1.0.1" />
     <gap:plugin name="org.apache.cordova.file-transfer" version="0.4.2" />
-    <gap:plugin name="org.apache.cordova.device" version="0.2.8" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.6" />
-    <gap:plugin name="org.apache.cordova.network-information" version="0.2.7" />
 </widget>

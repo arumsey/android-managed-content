@@ -1,0 +1,35 @@
+{
+    "days": [
+        {
+            "position": 1,
+            "title": "Day 1",
+            "date": "Wednesday June 26"
+        },
+        {
+            "position": 2,
+            "title": "Day 2",
+            "date": "Thursday June 27"
+        }
+    ],
+    "sessions" : [
+        {
+            "position": 1,
+            "title": "Preso 1",
+            "description": "this is the description",
+            "url": "http://www.adobe.com"
+        },
+        {
+            "position": 1,
+            "title": "Preso 2",
+            "description": "this is the description",
+            "url": "http://www.adobe.com"
+        },
+        {
+            "position": 2,
+            "title": "Preso 3",
+            "description": "this is the description",
+            "url": "http://www.adobe.com"
+        }
+
+    ]
+}

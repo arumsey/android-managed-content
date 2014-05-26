@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/geometrixx-webview-app"/>
-    <filter root="/etc/designs/phonegap/geometrixx/ng-webviewapp"/>
-    <filter root="/content/dam/geometrixx-webview"/>
-    <filter root="/content/phonegap/geometrixx/apps/ng-geometrixx-webview"/>
-    <filter root="/content/phonegap/geometrixx/content/ng-geometrixx-webview"/>
+    <filter root="/apps/homepage-webview-app"/>
+    <filter root="/etc/designs/phonegap/connectcon/homepage-app"/>
+    <filter root="/content/dam/connectcon"/>
+    <filter root="/content/phonegap/connectcon/apps/ng-homepage-webview"/>
+    <filter root="/content/phonegap/connectcon/content/ng-homepage-webview"/>
 </workspaceFilter>
