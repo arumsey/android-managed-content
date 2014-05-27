@@ -15,6 +15,7 @@
             jcr:primaryType="nt:unstructured"
             imageRotate="0">
             <file/>
+            <file.sftmp/>
         </image>
     </jcr:content>
     <home/>

@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/phonegap/connectcon/homepage-app"
-        cq:lastModified="{Date}2014-05-26T12:47:10.832-04:00"
+        cq:lastModified="{Date}2014-05-27T09:37:20.267-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/homepage-webview-app/templates/ng-page"
         jcr:primaryType="cq:PageContent"
@@ -34,6 +34,13 @@
                 frameworkType="angular"
                 text="&lt;p style=&quot;text-align: center;&quot;>CONNECT Web Experience is a unique opportunity to aggregate CQ developers from partners and customers, as well as Adobe CQ experts, to share their experiences, the best development tools and practices, and learn about the most demanded deep technical dives.&lt;/p>&#xa;"
                 textIsRich="true"/>
+            <phonegap_location
+                jcr:created="{Date}2014-05-27T09:37:20.264-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2014-05-27T09:37:20.264-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="homepage-webview-app/components/phonegap-location"/>
         </content-par>
         <image jcr:primaryType="nt:unstructured">
             <file/>
