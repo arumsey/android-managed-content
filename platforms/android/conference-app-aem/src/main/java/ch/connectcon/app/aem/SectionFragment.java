@@ -19,10 +19,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by arumsey on 2014-05-09.
- */
 public class SectionFragment extends ListFragment {
+
     /**
      * The fragment argument representing the section number for this
      * fragment.

@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:mixinTypes="[]"
-    jcr:primaryType="dam:Asset">
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="8c0f2c97-309a-4eb4-8489-8a7a4502773c">
     <jcr:content
-        dam:lastInvalidateCache="{Date}2014-05-27T09:36:43.295-04:00"
+        cq:name="connect-logo.png"
+        cq:parentPath="/content/dam/connectcon/app"
+        dam:lastInvalidateCache="{Date}2014-05-29T08:38:57.608-04:00"
         dam:s7damAnchorX="{Long}255"
         dam:s7damAnchorY="{Long}122"
         dam:s7damHeight="{Long}244"
-        dam:s7damImageCopyPath="/var/folders/xx/sqgqmr2n51gdr50y18n748980000gn/T/scene72456726171754291233.tmp"
+        dam:s7damImageCopyPath="/tmp/scene76137047023943795002.tmp"
         dam:s7damType="Image"
         dam:s7damWidth="{Long}510"
-        jcr:lastModified="{Date}2014-05-27T09:36:45.343-04:00"
+        jcr:lastModified="{Date}2014-05-29T08:57:50.959-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}32"
             dam:Comments="Software: Adobe ImageReady&#xa;"
-            dam:extracted="{Date}2014-05-27T09:36:42.785-04:00"
+            dam:extracted="{Date}2014-05-29T08:38:57.166-04:00"
             dam:Fileformat="PNG"
             dam:MIMEtype="image/png"
             dam:Numberofimages="{Long}1"
@@ -30,6 +34,9 @@
             dam:size="{Long}27906"
             dam:writebackEnable="False"
             dc:format="image/png"
+            dc:modified="{Date}2014-05-29T08:38:56.652-04:00"
+            jcr:lastModified="{Date}2014-05-29T08:57:50.714-04:00"
+            jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             tiff:ImageLength="{Long}244"

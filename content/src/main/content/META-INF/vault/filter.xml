@@ -5,4 +5,8 @@
     <filter root="/content/dam/connectcon"/>
     <filter root="/content/phonegap/connectcon/apps/ng-homepage-webview"/>
     <filter root="/content/phonegap/connectcon/content/ng-homepage-webview"/>
+
+    <filter root="/content/projects/20140529/connectwebex"/>
+    <filter root="/content/dam/projects/connectwebex"/>
+
 </workspaceFilter>

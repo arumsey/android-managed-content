@@ -28,7 +28,7 @@
                 
 
                 // URI for requesting OTA updates
-                var contentSyncUpdateUri = 'http\x3A\x2F\x2Flocalhost\x3A4503\x2Fcontent\x2Fphonegap\x2Fconnectcon\x2Fcontent\x2Fng\x2Dhomepage\x2Dwebview\x2Fhomepage\x2Dapp\x2Dcli.zip';
+                var contentSyncUpdateUri = 'http\x3A\x2F\x2FFwww.geometrixxmedia.com\x2Fcontent\x2Fphonegap\x2Fconnectcon\x2Fcontent\x2Fng\x2Dhomepage\x2Dwebview\x2Fhomepage\x2Dapp\x2Dcli.zip';
 
                 // Initialize the app updater
                 cqContentSyncUpdate.setContentSyncUpdateConfiguration(contentSyncUpdateUri);

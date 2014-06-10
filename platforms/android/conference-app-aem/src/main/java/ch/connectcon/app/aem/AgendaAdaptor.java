@@ -11,8 +11,6 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-/**
- */
 public class AgendaAdaptor extends ArrayAdapter<JSONObject> {
 
     private List<JSONObject> itemList;

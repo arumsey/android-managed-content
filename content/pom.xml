@@ -53,7 +53,7 @@
                 <version>0.0.20</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <group>cq/lowes</group>
+                    <group>ch/connectcon</group>
                     <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                     <failOnError>true</failOnError>

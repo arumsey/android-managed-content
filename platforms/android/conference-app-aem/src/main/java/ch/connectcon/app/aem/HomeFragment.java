@@ -17,15 +17,7 @@ import org.apache.cordova.CordovaWebView;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * Created by arumsey on 2014-05-09.
- */
 public class HomeFragment extends Fragment implements CordovaInterface {
-    /**
-     * The fragment argument representing the section number for this
-     * fragment.
-     */
-    private static final String ARG_SECTION_NUMBER = "section_number";
 
     /**
      * Cordova
@@ -40,12 +32,13 @@ public class HomeFragment extends Fragment implements CordovaInterface {
     // when another application (activity) is started.
     protected boolean keepRunning = true;
 
-    CordovaWebView aemView;
     private final ExecutorService threadPool = Executors.newCachedThreadPool();
 
+    CordovaWebView aemView;
+
+
     /**
-     * Returns a new instance of this fragment for the given section
-     * number.
+     * Returns a new instance of this fragment
      */
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
