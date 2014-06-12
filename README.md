@@ -2,9 +2,9 @@ Native Android App with Embedded Webview and AEM 6.0
 ===========
 
 A specific example of <https://github.com/Adobe-Marketing-Cloud/app-sample-android-phonegap> that has been created for a
- talk I presented at the [Connect Web Experience](http://www.connectcon.ch/2014/en.html) conference.
+talk I presented at the [Connect Web Experience](http://www.connectcon.ch/2014/en.html) conference.
 
----
+----
 
 ##Background
 
@@ -16,10 +16,6 @@ it is also possible to include Cordova plugins with your Android app that the we
 
 In this example AEM App web content is added to the Android app assets folder and delivered to the Cordova WebView.  The web content from AEM takes
 advantage of the Cordova plugins for accessing the device filesystem, unzipping packages and geolocation.
-
-The Phonegap [documentation](http://docs.phonegap.com/en/3.4.0/guide_platforms_android_webview.md.html) does provide some details on how to embed a Cordova-enabled WebView component as an Android activity.
-This example however, embeds the Cordova WebView as an Android fragment instead.
-
 
 ##Installation
 
@@ -34,38 +30,24 @@ Android
 
 ###Setup
 
-Before being able to build this example Android app ensure your development environment is set up correctly.
-
-1. Android SDK (http://developer.android.com/sdk/index.html)
-1. Maven 3.2.1+
-1. ANDROID_HOME environment variable
-1. Install Android artifacts in to local Maven repository
-    - When building an Android application with Maven the compile process needs access to the Android API for the specific platform version the project is configured against. The Android SDK ships this as android.jar files in the different platform folders. In order for Maven to access these libraries, they need to be available in the local Maven repository.
-    - See: <http://books.sonatype.com/mvnref-book/reference/android-dev-sect-config-build.html#android-dev-sect-repository-install>
-
-####References
-
-- <http://books.sonatype.com/mvnref-book/reference/android-dev.html>
-- <https://code.google.com/p/maven-android-plugin/wiki/GettingStarted>
-- <https://github.com/mosabua/maven-android-sdk-deployer>
+See: <https://github.com/Adobe-Marketing-Cloud/app-sample-android-phonegap>
 
 ###Build
 
 * Install additional libs to local maven repository
 
-        cd platforms/android/geometrixx-app/libs
+        cd platforms/android/conference-app-aem/libs
         mvn install:install-file -Dfile=cordova-3.4.0.jar -DgroupId=org.apache.cordova -DartifactId=cordova -Dversion=3.4.0 -Dpackaging=jar
         mvn install:install-file -Dfile=adobeMobileLibrary.jar -DgroupId=com.adobe.mobile -DartifactId=mobile-services -Dversion=4.1.1 -Dpackaging=jar
 
 * Build Android APK
 
-        cd platforms/android/geometrixx-app
+        cd platforms/android/conference-app-aem
         mvn clean install
 
 * Deploy and run app
 
         mvn android:deploy android:run
-
 
 
 Experience Manager (AEM 6.0)
@@ -78,7 +60,7 @@ Experience Manager (AEM 6.0)
 
 * Then download the PhoneGap compatible content sync ZIP of the content.
 
-        http://localhost:4502/content/phonegap/geometrixx/content/ng-geometrixx-webview/geometrixx-webview-cli.zip
+        http://localhost:4502/content/phonegap/connectcon/content/ng-homepage-webview/homepage-app-cli.zip
 
 * Unzip to your local file system and run phonegap build
 
@@ -88,7 +70,7 @@ Experience Manager (AEM 6.0)
 
         cd platforms/android
 
-* Copy the following files/directories to platforms/android/geometrixx-app
+* Copy the following files/directories to platforms/android/conference-app-aem
     * assets (web content)
     * res/xml (cordova config)
     * libs (additional libs)
