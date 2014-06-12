@@ -1,4 +1,4 @@
-Native Android App with Embedded Webview and AEM 6.0
+Conference Schedule App
 ===========
 
 A specific example of <https://github.com/Adobe-Marketing-Cloud/app-sample-android-phonegap> that has been created for a
