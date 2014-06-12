@@ -78,16 +78,6 @@
             <version>19.1.0</version>
             <type>jar</type>
         </dependency>
-        <dependency>
-            <groupId>org.apache.cordova</groupId>
-            <artifactId>cordova</artifactId>
-            <version>3.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.adobe.mobile</groupId>
-            <artifactId>mobile-services</artifactId>
-            <version>4.1.1</version>
-        </dependency>
     </dependencies>
 
 </project>
