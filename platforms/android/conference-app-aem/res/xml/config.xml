@@ -21,7 +21,7 @@
         <param name="android-package" value="org.apache.cordova.Zip" />
     </feature>
     <feature name="Navigation">
-        <param name="android-package" value="ch.connectcon.app.aem.plugin.Navigation" />
+        <param name="android-package" value="ch.connectcon.app.plugin.Navigation" />
     </feature>
     <name>ConnectWebEx</name>
     <preference name="phonegap-version" value="3.4.0" />

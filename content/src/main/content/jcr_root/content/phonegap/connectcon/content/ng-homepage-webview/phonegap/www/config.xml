@@ -2,7 +2,7 @@
 <widget id="ch.connectcon.app.aem" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 
     <feature name="Navigation">
-        <param name="android-package" value="ch.connectcon.app.aem.plugin.Navigation" />
+        <param name="android-package" value="ch.connectcon.app.plugin.Navigation" />
     </feature>
 
     <name>ConnectWebEx</name>

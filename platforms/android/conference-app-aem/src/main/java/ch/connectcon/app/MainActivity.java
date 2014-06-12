@@ -1,4 +1,4 @@
-package ch.connectcon.app.aem;
+package ch.connectcon.app;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import ch.connectcon.app.aem.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

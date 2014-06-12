@@ -1,11 +1,11 @@
-package ch.connectcon.app.aem.plugin;
+package ch.connectcon.app.plugin;
 
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
-import ch.connectcon.app.aem.MainActivity;
+import ch.connectcon.app.MainActivity;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;

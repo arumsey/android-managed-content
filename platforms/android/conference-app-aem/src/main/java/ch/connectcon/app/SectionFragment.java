@@ -1,4 +1,4 @@
-package ch.connectcon.app.aem;
+package ch.connectcon.app;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import ch.connectcon.app.aem.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
