@@ -2,9 +2,9 @@ Native Android App with Embedded Webview and AEM 6.0
 ===========
 
 A specific example of <https://github.com/Adobe-Marketing-Cloud/app-sample-android-phonegap> that has been created for a
-talk I presented at the [Connect Web Experience](http://www.connectcon.ch/2014/en.html) conference.
+talk I [presented](http://me.planetrumsey.ca/assets/aem-apps-in-native) at the [Connect Web Experience](http://www.connectcon.ch/2014/en.html) conference.
 
-----
+#### [View the slides!](http://me.planetrumsey.ca/assets/aem-apps-in-native)
 
 ##Background
 
