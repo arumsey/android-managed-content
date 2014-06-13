@@ -1,0 +1,201 @@
+//
+// Home View Frag Layout
+//
+
+    <org.apache.cordova.CordovaWebView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id = "@+id/aemWebView"/>
+
+
+//
+// Home Fragment
+//
+
+    CordovaWebView aemView;
+
+------
+onCreateView
+
+        LayoutInflater localInflater = inflater.cloneInContext(new CordovaContext(getActivity(), this));
+
+        View rootView = localInflater.inflate(R.layout.home_view_frag, container, false);
+        aemView = (CordovaWebView) rootView.findViewById(R.id.aemWebView);
+        Config.init(getActivity());
+        aemView.loadUrl(Config.getStartUrl());
+        return rootView;
+
+--------
+
+    private class CordovaContext extends ContextWrapper implements CordovaInterface
+    {
+        CordovaInterface ci;
+
+        // Hold two objects. Method call to Context will be proxied by ContextWrapper, so only delegate CordovaInterface.
+        // You should add/modify when method in CordovaInterface changed
+        public CordovaContext(Context base, CordovaInterface ci) {
+            super(base);
+            this.ci = ci;
+        }
+        public void startActivityForResult(CordovaPlugin command,
+                                           Intent intent, int requestCode) {
+            ci.startActivityForResult(command, intent, requestCode);
+        }
+        public void setActivityResultCallback(CordovaPlugin plugin) {
+            ci.setActivityResultCallback(plugin);
+        }
+        public Activity getActivity() {
+            return ci.getActivity();
+        }
+        public Object onMessage(String id, Object data) {
+            return ci.onMessage(id, data);
+        }
+        public ExecutorService getThreadPool() {
+            return ci.getThreadPool();
+        }
+
+    }
+
+--------
+
+    // Plugin to call when activity result is received
+    protected CordovaPlugin activityResultCallback = null;
+    protected boolean activityResultKeepRunning;
+
+    // Keep app running when pause is received. (default = true)
+    // If true, then the JavaScript and native code continue to run in the background
+    // when another application (activity) is started.
+    protected boolean keepRunning = true;
+
+    private final ExecutorService threadPool = Executors.newCachedThreadPool();
+
+-----
+
+    /**
+     * Called when a message is sent to plugin.
+     *
+     * @param id
+     *            The message id
+     * @param data
+     *            The message data
+     * @return Object or null
+     */
+    public Object onMessage(String id, Object data) {
+        return null;
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+        if (aemView.pluginManager != null) {
+            aemView.pluginManager.onDestroy();
+        }
+    }
+
+    // Cordova Interface Events
+    @Override
+    public ExecutorService getThreadPool() {
+        return threadPool;
+    }
+
+    @Override
+    public void setActivityResultCallback(CordovaPlugin plugin) {
+        this.activityResultCallback = plugin;
+    }
+
+    /**
+     * Launch an activity for which you would like a result when it finished. When this activity exits,
+     * your onActivityResult() method is called.
+     *
+     * @param command           The command object
+     * @param intent            The intent to start
+     * @param requestCode       The request code that is passed to callback to identify the activity
+     */
+    public void startActivityForResult(CordovaPlugin command, Intent intent, int requestCode) {
+        this.activityResultCallback = command;
+        this.activityResultKeepRunning = this.keepRunning;
+
+        // If multitasking turned on, then disable it for activities that return results
+        if (command != null) {
+            this.keepRunning = false;
+        }
+
+        // Start activity
+        super.startActivityForResult(intent, requestCode);
+
+    }
+
+    @Override
+    /**
+     * Called when an activity you launched exits, giving you the requestCode you started it with,
+     * the resultCode it returned, and any additional data from it.
+     *
+     * @param requestCode       The request code originally supplied to startActivityForResult(),
+     *                          allowing you to identify who this result came from.
+     * @param resultCode        The integer result code returned by the child activity through its setResult().
+     * @param data              An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
+     */
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        CordovaPlugin callback = this.activityResultCallback;
+        if (callback != null) {
+            callback.onActivityResult(requestCode, resultCode, intent);
+        }
+    }
+
+
+//
+// Plugin
+//
+
+    @Override
+    public boolean execute(String action, CordovaArgs args, final CallbackContext callbackContext) throws JSONException {
+        if ("navigate".equals(action)) {
+            navigate(args, callbackContext);
+            return true;
+        }
+        return false;
+    }
+
+    private void navigate(final CordovaArgs args, final CallbackContext callbackContext) {
+        this.cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                navigateSync(args, callbackContext);
+            }
+        });
+    }
+
+    private void navigateSync(CordovaArgs args, final CallbackContext ctx) {
+        try {
+            MainActivity homeActivity = (MainActivity) this.cordova.getActivity();
+            Context context = homeActivity.getApplicationContext();
+
+            String bannerType = args.getString(0);
+            String bannerValue = args.getString(1);
+
+            if (bannerType.equals("INTERNAL_NAV")) {
+                homeActivity.goToPage(Integer.valueOf(bannerValue).intValue());
+            } else if (bannerType.equals("EXTERNAL_LINK")) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse(bannerValue));
+                browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(browserIntent);
+            }
+
+            ctx.success();
+
+        } catch (Exception e) {
+            String errorMessage = "An error occurred during navigation.";
+            ctx.error(errorMessage);
+            Log.e(LOG_TAG, errorMessage, e);
+        }
+    }
+
+
+
+    //
+    // config.xml
+    //
+
+    <feature name="Navigation">
+        <param name="android-package" value="ch.connectcon.app.plugin.Navigation" />
+    </feature>
