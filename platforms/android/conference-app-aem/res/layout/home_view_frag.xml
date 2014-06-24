@@ -6,20 +6,10 @@
     android:padding="0dp"
     android:baselineAligned="true">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageLogo"
-        android:layout_gravity="center"
-        android:src="@drawable/logo_connect" />
-
-    <TextView android:id="@+id/text"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/connectwe"/>
-
-    <!-- TODO: add cordova web view -->
+    <org.apache.cordova.CordovaWebView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id = "@+id/aemWebView"/>
 
 </LinearLayout>
 
