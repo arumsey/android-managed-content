@@ -18,15 +18,12 @@ import org.apache.cordova.CordovaWebView;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class HomeFragment extends Fragment { //TODO: add CordovaInterface
+public class HomeFragment extends Fragment implements CordovaInterface {
 
     /**
      * Cordova
      */
-
-    //
-    // TODO: add cordova
-    //
+    CordovaWebView aemView;
 
 
     /**
@@ -38,14 +35,15 @@ public class HomeFragment extends Fragment { //TODO: add CordovaInterface
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-        //TODO: add cordova
 
         View rootView = inflater.inflate(R.layout.home_view_frag, container, false);
+        aemView = (CordovaWebView) rootView.findViewById(R.id.aemWebView);
+        Config.init(getActivity());
+        aemView.loadUrl(Config.getStartUrl());
         return rootView;
+
     }
 
     /**
