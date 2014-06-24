@@ -37,8 +37,9 @@ public class HomeFragment extends Fragment implements CordovaInterface {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        LayoutInflater localInflater = inflater.cloneInContext(new CordovaContext(getActivity(), this));
 
-        View rootView = inflater.inflate(R.layout.home_view_frag, container, false);
+        View rootView = localInflater.inflate(R.layout.home_view_frag, container, false);
         aemView = (CordovaWebView) rootView.findViewById(R.id.aemWebView);
         Config.init(getActivity());
         aemView.loadUrl(Config.getStartUrl());
@@ -53,5 +54,34 @@ public class HomeFragment extends Fragment implements CordovaInterface {
     //
     // TODO: add cordova
     //
+
+    private class CordovaContext extends ContextWrapper implements CordovaInterface
+    {
+        CordovaInterface ci;
+
+        // Hold two objects. Method call to Context will be proxied by ContextWrapper, so only delegate CordovaInterface.
+        // You should add/modify when method in CordovaInterface changed
+        public CordovaContext(Context base, CordovaInterface ci) {
+            super(base);
+            this.ci = ci;
+        }
+        public void startActivityForResult(CordovaPlugin command,
+                                           Intent intent, int requestCode) {
+            ci.startActivityForResult(command, intent, requestCode);
+        }
+        public void setActivityResultCallback(CordovaPlugin plugin) {
+            ci.setActivityResultCallback(plugin);
+        }
+        public Activity getActivity() {
+            return ci.getActivity();
+        }
+        public Object onMessage(String id, Object data) {
+            return ci.onMessage(id, data);
+        }
+        public ExecutorService getThreadPool() {
+            return ci.getThreadPool();
+        }
+
+    }
 
 }
