@@ -6,6 +6,8 @@ talk I [presented](http://me.planetrumsey.ca/assets/aem-apps-in-native) at the [
 
 #### [View the slides!](http://me.planetrumsey.ca/assets/aem-apps-in-native)
 
+##### You can also follow along with all the steps over at the [demo branch](https://github.com/arumsey/android-managed-content/tree/step-0).
+
 ##Background
 
 A native Android example running a Cordova (ie. PhoneGap) WebView home page connected to AEM6.
