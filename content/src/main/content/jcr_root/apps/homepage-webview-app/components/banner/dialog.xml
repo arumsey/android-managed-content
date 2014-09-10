@@ -48,7 +48,6 @@
                 </action>
                 <actionValue
                     jcr:primaryType="cq:Widget"
-                    disabled="{Boolean}true"
                     fieldLabel="Action Value"
                     name="./actionValue"
                     xtype="textfield"/>
