@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Conference</string>
+    <string name="app_name">Connect WE</string>
     <string name="title_home">Home</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
+    <string name="title_unknown">Day</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="connectwe">CONNECT Web Experience is a unique opportunity to aggregate CQ developers from partners and customers, as well as Adobe CQ experts, to share their experiences, the best development tools and practices, and learn about the most demanded deep technical dives.</string>
 
 </resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    activeTab="{Long}0"
+    helpPath="en/cq/current/wcm/default_components.html#Image"
+    manageActions="function(field,action){var action_list = ['PRODUCT_LIST','NON_PRODUCT_CONTENT','YOUTUBE_VIDEO','PRODUCT_DETAIL']; var index=action_list.indexOf(action); field.nextSibling().setDisabled(index == -1);}"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <image
+            jcr:primaryType="cq:Widget"
+            cropParameter="./imageCrop"
+            ddGroups="[media]"
+            fileNameParameter="./fileName"
+            fileReferenceParameter="./fileReference"
+            mapParameter="./imageMap"
+            name="./file"
+            requestSuffix=".img.png"
+            rotateParameter="./imageRotate"
+            title="Image"
+            xtype="html5smartimage"/>
+        <advanced
+            jcr:primaryType="cq:Widget"
+            title="Advanced"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <title
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Title"
+                    name="./jcr:title"
+                    xtype="textfield"/>
+                <action
+                    jcr:primaryType="cq:Widget"
+                    defaultValue=""
+                    fieldLabel="Action"
+                    name="./action"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <nav
+                            jcr:primaryType="nt:unstructured"
+                            text="App Navigation"
+                            value="INTERNAL_NAV"/>
+                        <external
+                            jcr:primaryType="nt:unstructured"
+                            text="External Link"
+                            value="EXTERNAL_LINK"/>
+                    </options>
+                </action>
+                <actionValue
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Action Value"
+                    name="./actionValue"
+                    xtype="textfield"/>
+            </items>
+        </advanced>
+    </items>
+</jcr:root>

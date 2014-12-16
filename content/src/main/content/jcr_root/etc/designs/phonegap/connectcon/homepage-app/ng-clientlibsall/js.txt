@@ -1,0 +1,4 @@
+#base=js
+
+initialize-app.js
+aem-pg-api.js
