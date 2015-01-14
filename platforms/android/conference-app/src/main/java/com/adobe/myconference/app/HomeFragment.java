@@ -1,4 +1,4 @@
-package ch.connectcon.app;
+package com.adobe.myconference.app;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

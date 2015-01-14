@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ch.connectcon.app.aem" >
+    package="com.adobe.myconference.app.aem" >
 
     <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" />
 
@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="ch.connectcon.app.MainActivity"
+            android:name="com.adobe.myconference.app.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

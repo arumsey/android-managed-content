@@ -1,4 +1,4 @@
-package ch.connectcon.app;
+package com.adobe.myconference.app;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,11 +1,11 @@
-package ch.connectcon.app.plugin;
+package com.adobe.myconference.app.plugin;
 
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
-import ch.connectcon.app.MainActivity;
+import com.adobe.myconference.app.MainActivity;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;

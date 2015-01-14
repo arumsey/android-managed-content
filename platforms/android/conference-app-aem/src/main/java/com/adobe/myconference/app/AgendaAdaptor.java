@@ -1,4 +1,4 @@
-package ch.connectcon.app;
+package com.adobe.myconference.app;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import ch.connectcon.app.aem.R;
+import com.adobe.myconference.app.aem.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 

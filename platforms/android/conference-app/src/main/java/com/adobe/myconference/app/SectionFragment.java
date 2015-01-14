@@ -1,4 +1,4 @@
-package ch.connectcon.app;
+package com.adobe.myconference.app;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,21 +7,19 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import ch.connectcon.app.aem.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by arumsey on 2014-05-09.
+ */
 public class SectionFragment extends ListFragment {
-
     /**
      * The fragment argument representing the section number for this
      * fragment.
