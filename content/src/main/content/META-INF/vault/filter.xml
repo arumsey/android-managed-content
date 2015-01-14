@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/homepage-webview-app"/>
-    <filter root="/etc/designs/phonegap/connectcon/homepage-app"/>
-    <filter root="/content/dam/connectcon"/>
-    <filter root="/content/phonegap/connectcon/apps/ng-homepage-webview"/>
-    <filter root="/content/phonegap/connectcon/content/ng-homepage-webview"/>
+    <filter root="/etc/designs/phonegap/myconference/homepage-app"/>
+    <filter root="/content/dam/myconference"/>
+    <filter root="/content/phonegap/myconference"/>
 
-    <filter root="/content/projects/20140529/connectwebex"/>
-    <filter root="/content/dam/projects/connectwebex"/>
+    <filter root="/content/projects/20140529/myconference"/>
+    <filter root="/content/dam/projects/myconference"/>
 
 </workspaceFilter>

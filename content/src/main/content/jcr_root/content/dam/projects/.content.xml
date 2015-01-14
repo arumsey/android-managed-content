@@ -4,10 +4,10 @@
     jcr:primaryType="sling:OrderedFolder"
     jcr:title="Projects">
     <rep:policy/>
-    <shapes/>
     <outdoors/>
     <media/>
+    <shapes/>
     <gov/>
     <jcr:content/>
-    <connectwebex/>
+    <myconference/>
 </jcr:root>

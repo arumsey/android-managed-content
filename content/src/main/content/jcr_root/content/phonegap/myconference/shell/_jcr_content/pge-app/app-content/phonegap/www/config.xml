@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.adobe.myconference.app.aem" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+
+    <name>My Conference</name>
+    <preference name="phonegap-version" value="4.0.0" />
+    <description>
+        Demo that illustrates how managed content can be integrated into an existing native application.
+    </description>
+
+    <author href="http://www.adobe.com">
+        Anthony Rumsey
+    </author>
+
+    <content src="content/phonegap/myconference/en.html" />
+
+    <preference name="UIWebViewBounce" value="false" />
+   <preference name="DisallowOverscroll" value="true" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="SplashScreen" value="screen" />
+
+    <!-- File preferences -->
+    <preference name="iosPersistentFileLocation" value="Library" />
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+
+    <icon src="icon.png" />
+    <access origin="*" />
+
+    <!-- Platforms -->
+    <gap:platform name="android" />
+
+    <!-- Features -->
+    <feature name="org.apache.cordova.file">
+        <param name="id" value="org.apache.cordova.file@1.0.1"/>
+    </feature>
+    <feature name="org.apache.cordova.file-transfer">
+        <param name="id" value="org.apache.cordova.file-transfer@0.4.2"/>
+    </feature>
+    <feature name="org.apache.cordova.geolocation">
+        <param name="id" value="org.apache.cordova.geolocation@0.3.10"/>
+    </feature>
+    <feature name="org.chromium.zip">
+        <param name="id" value="org.chromium.zip@2.0.0"/>
+    </feature>
+    <feature name="ADBMobile">
+        <param name="id" value="https://github.com/Adobe-Marketing-Cloud/mobile-services.git"/>
+    </feature>
+    <feature name="Navigation">
+        <param name="android-package" value="com.adobe.myconference.app.plugin.Navigation" />
+    </feature>
+
+    <!-- Hooks -->
+    <hook type="after_platform_add" src="scripts/restore_plugins.js"/>
+    <hook type="after_prepare" src="scripts/copy_AMS_config.js" />
+
+
+</widget>

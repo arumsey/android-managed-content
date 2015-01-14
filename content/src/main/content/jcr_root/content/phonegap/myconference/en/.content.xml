@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:allowedTemplates="[/apps/homepage-webview-app/templates/.*]"
+        cq:designPath="/etc/designs/phonegap/myconference/homepage-app"
+        cq:lastModified="{Date}2014-05-26T12:26:24.033-04:00"
+        cq:lastModifiedBy="admin"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="My Conference Content"
+        sling:resourceType="homepage-webview-app/components/splash-page"
+        pge-type="[app-content]"
+        phonegap-exportTemplate="/content/phonegap/myconference/en/jcr:content/pge-app/app-config">
+        <image
+            jcr:lastModified="{Date}2014-09-04T16:49:51.263-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            fileReference="/content/dam/myconference/app/phonegap-app.png"
+            imageRotate="0"/>
+        <pge-app/>
+    </jcr:content>
+    <home/>
+</jcr:root>

@@ -46,8 +46,8 @@
             //conference location
             $scope.locations.push({
                 "coordinates": {
-                    "lat": 47.5542490,
-                    "lng": 7.5893580
+                    "lat": 37.775274,
+                    "lng": -122.39731
                 }
             });
 

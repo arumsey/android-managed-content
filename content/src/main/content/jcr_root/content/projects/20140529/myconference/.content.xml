@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:lastModified="{Date}2014-05-29T08:42:39.150-04:00"
+    jcr:lastModifiedBy="admin"
+    jcr:mixinTypes="[mix:created,mix:lastModified,rep:AccessControllable]"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/projects/admin/card/projectcard"
+    role_editor="projects-myconference-editor"
+    role_observer="projects-myconference"
+    role_owner="projects-myconference-owner">
+    <jcr:content
+        cq:template="/libs/cq/core/content/projects/templates/default"
+        jcr:description="My Conference Demo"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="My Conference"
+        sling:resourceType="cq/gui/components/projects/admin/card/projectcontent"
+        active="{Boolean}true"
+        coverUrl="/content/dam/projects/myconference/cover"
+        damFolderPath="/content/dam/projects/myconference"
+        detailsHref="/projects/details.html"
+        project.dueDate="{Date}2015-02-28T00:00:00.000-04:00">
+        <links jcr:primaryType="nt:unstructured"/>
+        <dashboard jcr:primaryType="nt:unstructured">
+            <gadgets
+                jcr:lastModified="{Date}2014-05-29T08:53:57.384-04:00"
+                jcr:primaryType="nt:unstructured">
+                <team
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Team"
+                    sling:resourceType="cq/gui/components/projects/admin/pod/teampod"
+                    cardWeight="60"/>
+                <asset
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Assets"
+                    sling:resourceType="cq/gui/components/projects/admin/pod/assetpod"
+                    cardWeight="90"/>
+                <experiences
+                    jcr:lastModified="{Date}2014-05-29T08:45:40.920-04:00"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Experiences"
+                    sling:resourceType="cq/gui/components/projects/admin/pod/channelpod"
+                    cardWeight="90">
+                    <mobile_application
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Mobile Application"
+                        sling:resourceType="cq/gui/components/projects/admin/card/linkcard"
+                        class="card-page"
+                        consolePath="/aem/apps.html"
+                        name="mobileapp"
+                        projectPath="/content/projects/20140529/myconference"
+                        suffix="/content/phonegap/myconference/shell"/>
+                </experiences>
+                <projectinfo
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Project Info"
+                    sling:resourceType="cq/gui/components/projects/admin/pod/projectinfopod"
+                    cardWeight="100"/>
+                <externallinks
+                    jcr:description="Links Tile"
+                    jcr:lastModified="{Date}2014-05-29T08:50:47.547-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:mixinTypes="[mix:lastModified]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Links"
+                    sling:resourceType="cq/gui/components/projects/admin/pod/externallinkspod"
+                    cardWeight="90">
+                    <adobe
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Connect WE 2014"
+                        sling:resourceType="cq/gui/components/projects/admin/card/linkcard"
+                        class="card-article"
+                        consolePath="http://www.adobe.com"
+                        linkParent="/content/projects/20140529/myconference/_jcr_content/dashboard/gadgets/externallinks"
+                        name="External"
+                        target="_blank"/>
+                </externallinks>
+            </gadgets>
+        </dashboard>
+        <projectThumbnail/>
+    </jcr:content>
+</jcr:root>

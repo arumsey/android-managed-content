@@ -5,12 +5,13 @@
     <rep:policy/>
     <jcr:content/>
     <collections/>
-    <geometrixx/>
     <geometrixx-outdoors/>
     <geometrixx-media/>
     <geometrixx-unlimited/>
+    <geometrixx/>
     <geometrixx-gov/>
     <formsanddocuments/>
     <projects/>
-    <connectcon/>
+    <geometrixx-webview/>
+    <myconference/>
 </jcr:root>

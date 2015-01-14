@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="Conference Webview PhoneGap Page"
+    jcr:description="My Conference PhoneGap Home Page"
     jcr:primaryType="cq:Template"
-    jcr:title="Conference Webview App Page"
-    allowedPaths="[/content/phonegap(/.*)?]"
+    jcr:title="My Conference Page"
+    allowedPaths="[/content/phonegap/myconference(/.*)?]"
     ranking="{Long}-2">
     <jcr:content
-        cq:designPath="/etc/designs/phonegap/connectcon/homepage-app"
+        cq:designPath="/etc/designs/phonegap/myconference/homepage-app"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="homepage-webview-app/components/ng-home-page"
-        page-transition="slide-animation"/>
+        sling:resourceType="homepage-webview-app/components/ng-home-page"/>
 </jcr:root>

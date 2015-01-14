@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Connect WE</string>
+    <string name="app_name">Tech Summit</string>
+    <string name="app_desc">Adobe Tech Summit 2015.\nMoscone Center West\nFebruary 22-26, 2015\n2300 technical representatives from Adobe development organizations across the world.</string>
     <string name="title_home">Home</string>
     <string name="title_unknown">Day</string>
     <string name="action_settings">Settings</string>
-    <string name="connectwe">CONNECT Web Experience is a unique opportunity to aggregate CQ developers from partners and customers, as well as Adobe CQ experts, to share their experiences, the best development tools and practices, and learn about the most demanded deep technical dives.</string>
+
 
 </resources>
