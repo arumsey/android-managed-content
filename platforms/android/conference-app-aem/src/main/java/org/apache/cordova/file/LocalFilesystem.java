@@ -309,9 +309,9 @@ public class LocalFilesystem extends Filesystem {
      * @param srcFile file to be copied
      * @param destFile destination to be copied to
      * @return a FileEntry object
-     * @throws java.io.IOException
+     * @throws IOException
      * @throws InvalidModificationException
-     * @throws org.json.JSONException
+     * @throws JSONException
      */
     private JSONObject copyFile(File srcFile, File destFile) throws IOException, InvalidModificationException, JSONException {
         // Renaming a file to an existing directory should fail
@@ -350,8 +350,8 @@ public class LocalFilesystem extends Filesystem {
      * @param srcDir directory to be copied
      * @param destinationDir destination to be copied to
      * @return a DirectoryEntry object
-     * @throws org.json.JSONException
-     * @throws java.io.IOException
+     * @throws JSONException
+     * @throws IOException
      * @throws NoModificationAllowedException
      * @throws InvalidModificationException
      */
@@ -393,9 +393,9 @@ public class LocalFilesystem extends Filesystem {
      * @param srcFile file to be copied
      * @param destFile destination to be copied to
      * @return a FileEntry object
-     * @throws java.io.IOException
+     * @throws IOException
      * @throws InvalidModificationException
-     * @throws org.json.JSONException
+     * @throws JSONException
      */
     private JSONObject moveFile(File srcFile, File destFile) throws IOException, JSONException, InvalidModificationException {
         // Renaming a file to an existing directory should fail
@@ -426,8 +426,8 @@ public class LocalFilesystem extends Filesystem {
      * @param srcDir directory to be copied
      * @param destinationDir destination to be copied to
      * @return a DirectoryEntry object
-     * @throws org.json.JSONException
-     * @throws java.io.IOException
+     * @throws JSONException
+     * @throws IOException
      * @throws InvalidModificationException
      * @throws NoModificationAllowedException
      * @throws FileExistsException

@@ -1,20 +1,14 @@
+.DS_Store
+.vlt
+node_modules
 atlassian-ide-plugin.xml
 *.iml
 .idea/**
-
 *.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+tmp/
 
 **/gen-external-apklibs/**
 **/generated-sources/**
 **/target/**
+**/assets/www/**
