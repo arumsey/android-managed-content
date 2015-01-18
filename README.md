@@ -27,8 +27,30 @@ the remaining views are native Android. Second, there is an AEM compatible packa
 rendering the web content that will be displayed by the app. Installing this package will allow you to manage all your web content within AEM
 and have it delivered to your Android app via content sync.
 
+Experience Manager (AEM 6.0)
+----------------------------
+
+* First a package that contains the content to be managed by AEM needs to be installed.
+
+```
+cd content
+mvn package content-package:install
+```
+
+* Then download the PhoneGap compatible content sync ZIP of the content.
+
+```
+npm run fetch
+```
+
+* Merge ZIP contents with your Android project
+
+```
+npm run merge
+```
+
 Android
-----
+-------
 
 ###Setup
 
@@ -38,46 +60,24 @@ See: <https://github.com/Adobe-Marketing-Cloud/app-sample-android-phonegap>
 
 * Install additional libs to local maven repository
 
-        cd platforms/android/conference-app-aem/libs
-        mvn install:install-file -Dfile=cordova-3.4.0.jar -DgroupId=org.apache.cordova -DartifactId=cordova -Dversion=3.4.0 -Dpackaging=jar
-        mvn install:install-file -Dfile=adobeMobileLibrary.jar -DgroupId=com.adobe.mobile -DartifactId=mobile-services -Dversion=4.1.1 -Dpackaging=jar
+```
+cd platforms/android/conference-app-aem/libs
+mvn install:install-file -Dfile=cordova-3.6,4.jar -DgroupId=org.apache.cordova -DartifactId=cordova -Dversion=3.6.4 -Dpackaging=jar
+mvn install:install-file -Dfile=adobeMobileLibrary-4.4.0.jar -DgroupId=com.adobe.mobile -DartifactId=mobile-services -Dversion=4.4.0 -Dpackaging=jar
+```
 
 * Build Android APK
 
+```
         cd platforms/android/conference-app-aem
         mvn clean install
+```
 
 * Deploy and run app
 
+```
         mvn android:deploy android:run
-
-
-Experience Manager (AEM 6.0)
-----
-
-* First a package that contains the content to be managed by AEM needs to be installed.
-
-        cd content
-        mvn package content-package:install
-
-* Then download the PhoneGap compatible content sync ZIP of the content.
-
-        http://localhost:4502/content/phonegap/connectcon/content/ng-homepage-webview/homepage-app-cli.zip
-
-* Unzip to your local file system and run phonegap build
-
-        phonegap build android
-
-* Go to the Android platform of the phonegap project you just built
-
-        cd platforms/android
-
-* Copy the following files/directories to platforms/android/conference-app-aem
-    * assets (web content)
-    * res/xml (cordova config)
-    * libs (additional libs)
-    * src/com -> src/main/java/com (cordova plugins)
-    * src/org -> src/main/java/org (cordova plugins)
+```
 
 ##Tutorials
 

@@ -11,4 +11,5 @@ cp('-Rf', 'tmp/'+platformPath+'/assets', deployPath);
 cp('-Rf', 'tmp/'+platformPath+'/res/xml', deployPath+'/res');
 cp('-Rf', 'tmp/'+platformPath+'/src/com', deployPath+'/src/main/java');
 cp('-Rf', 'tmp/'+platformPath+'/src/org', deployPath+'/src/main/java');
-
+cp('-Rf', 'tmp/'+platformPath+'/libs/*.jar', deployPath+'/libs');
+rm('-rf', deployPath+'/src/main/java/com/adobe/myconference/app/aem');

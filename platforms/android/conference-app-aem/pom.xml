@@ -81,12 +81,12 @@
         <dependency>
             <groupId>org.apache.cordova</groupId>
             <artifactId>cordova</artifactId>
-            <version>3.4.0</version>
+            <version>3.6.4</version>
         </dependency>
         <dependency>
             <groupId>com.adobe.mobile</groupId>
             <artifactId>mobile-services</artifactId>
-            <version>4.1.1</version>
+            <version>4.4.0</version>
         </dependency>
     </dependencies>
 
