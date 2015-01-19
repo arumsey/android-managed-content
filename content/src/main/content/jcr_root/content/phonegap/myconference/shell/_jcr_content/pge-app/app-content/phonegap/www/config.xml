@@ -62,7 +62,7 @@
 
     <!-- Hooks -->
     <hook type="after_platform_add" src="scripts/restore_plugins.js"/>
-    <hook type="after_prepare" src="scripts/copy_AMS_config.js" />
+    <!-- <hook type="after_prepare" src="scripts/copy_AMS_config.js" /> -->
 
 
 </widget>

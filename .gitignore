@@ -5,6 +5,8 @@ atlassian-ide-plugin.xml
 *.iml
 .idea/**
 *.class
+*.sublime-project
+*.sublime-workspace
 
 tmp/
 
