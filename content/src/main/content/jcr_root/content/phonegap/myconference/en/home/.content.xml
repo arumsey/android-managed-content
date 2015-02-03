@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/phonegap/myconference/homepage-app"
-        cq:lastModified="{Date}2015-01-14T13:54:16.600-05:00"
+        cq:lastModified="{Date}2015-02-03T11:13:01.654-05:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/homepage-webview-app/templates/ng-page"
         jcr:primaryType="cq:PageContent"
@@ -16,22 +16,22 @@
             <banner
                 jcr:created="{Date}2014-05-26T13:24:19.731-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-05-26T13:24:59.795-04:00"
+                jcr:lastModified="{Date}2015-02-03T11:11:50.923-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="homepage-webview-app/components/banner"
                 action="EXTERNAL_LINK"
                 actionValue="http://www.adobe.com"
-                fileReference="/content/dam/myconference/app/conference-logo.png"/>
+                fileReference="/content/dam/myconference/app/logo_tech.png"/>
             <ng_text
                 jcr:created="{Date}2014-05-13T16:32:41.571-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-05-13T16:33:31.671-04:00"
+                jcr:lastModified="{Date}2015-02-03T11:13:01.651-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="mobileapps/components/angular/ng-text"
                 frameworkType="angular"
-                text="&lt;p style=&quot;text-align: center;&quot;>Add description here&lt;/p>&#xa;"
+                text="&lt;p style=&quot;text-align: center;&quot;>&lt;b>Adobe Tech Summit 2015&lt;/b>&lt;/p>&#xa;&lt;p style=&quot;text-align: center;&quot;>Moscone Center West&lt;/p>&#xa;&lt;p style=&quot;text-align: center;&quot;>February 22-26, 2015&lt;/p>&#xa;&lt;p style=&quot;text-align: center;&quot;>2300 technical representatives from Adobe development organizations across the world.&lt;/p>&#xa;"
                 textIsRich="true"/>
             <phonegap_location
                 jcr:created="{Date}2014-05-27T09:37:20.264-04:00"

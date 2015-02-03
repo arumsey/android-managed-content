@@ -34,7 +34,7 @@
     <preference name="iosPersistentFileLocation" value="Library" />
     <preference name="AndroidPersistentFileLocation" value="Internal" />
 
-    <icon src="icon.png" />
+    <icon src="www/icon.png" />
     <access origin="*" />
 
     <!-- Platforms -->
@@ -57,12 +57,13 @@
         <param name="id" value="https://github.com/Adobe-Marketing-Cloud/mobile-services.git"/>
     </feature>
     <feature name="Navigation">
-        <param name="android-package" value="com.com.adobe.myconference.app.plugin.Navigation" />
+        <param name="android-package" value="com.adobe.myconference.app.plugin.Navigation" />
     </feature>
 
     <!-- Hooks -->
+    <!--
     <hook type="after_platform_add" src="scripts/restore_plugins.js"/>
-    <!-- <hook type="after_prepare" src="scripts/copy_AMS_config.js" /> -->
-
+    <hook type="after_prepare" src="scripts/copy_AMS_config.js" />
+    -->
 
 </widget>

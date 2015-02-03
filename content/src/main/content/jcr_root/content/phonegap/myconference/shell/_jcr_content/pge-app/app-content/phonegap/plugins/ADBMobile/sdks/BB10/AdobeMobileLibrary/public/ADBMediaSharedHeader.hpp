@@ -14,22 +14,20 @@
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe Systems Incorporated.
+ *
  **************************************************************************/
 
-var exec = require('child_process').exec;
+#ifndef ADBMEDIASHAREDHEADER_HPP_
+#define ADBMEDIASHAREDHEADER_HPP_
 
-module.exports = function(context) {
+typedef enum ADBMediaEventType {
+	ADBMediaEventTypeClose = 	0,
+	ADBMediaEventTypePlay = 	1,
+	ADBMediaEventTypeStop = 	2,
+	ADBMediaEventTypeMonitor = 	3,
+	ADBMediaEventTypeTrack = 	4,
+	ADBMediaEventTypeComplete = 5,
+	ADBMediaEventTypeClick =	7
+} ADBMediaEventType;
 
-	exec("phonegap --experimental restore plugins", function(error, stdout, stderr) {
-		if (error || stderr || stdout.match(/\[error\]/i)) {
-			var code = error ? error.code : 1;
-			console.error('Error restoring plugins. code: [' + code + ']');
-			console.error(stdout);
-			console.error(stderr);
-			process.exit(code);
-		} else {
-			console.log("Successfully restored plugins.");
-		}
-	});
-
-};
+#endif /* ADBMEDIASHAREDHEADER_HPP_ */
