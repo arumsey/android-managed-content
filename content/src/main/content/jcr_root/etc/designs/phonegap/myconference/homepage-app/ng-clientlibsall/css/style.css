@@ -52,11 +52,16 @@ body {
     overflow-y: auto;
 }
 
+.ng-text {
+    width:100%;
+}
+
 p{
     margin-top: 0em;
     margin-bottom: 0em;
     padding-top: 1em;
     padding-bottom: 1em;
+    text-align: center;
 }
 
 a {

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.adobe.myconference.app.aem" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 
-    <name>My Conference</name>
+    <name>Tech Summit</name>
     <preference name="phonegap-version" value="4.0.0" />
     <description>
         Demo that illustrates how managed content can be integrated into an existing native application.
@@ -47,6 +47,12 @@
     <feature name="org.apache.cordova.file-transfer">
         <param name="id" value="org.apache.cordova.file-transfer@0.4.2"/>
     </feature>
+    <feature name="org.apache.cordova.device">
+        <param name="id" value="org.apache.cordova.device@0.2.8"/>
+    </feature>
+    <feature name="org.apache.cordova.dialogs">
+        <param name="id" value="org.apache.cordova.dialogs@0.2.10"/>
+    </feature>
     <feature name="org.apache.cordova.geolocation">
         <param name="id" value="org.apache.cordova.geolocation@0.3.10"/>
     </feature>
@@ -61,9 +67,7 @@
     </feature>
 
     <!-- Hooks -->
-    <!--
     <hook type="after_platform_add" src="scripts/restore_plugins.js"/>
     <hook type="after_prepare" src="scripts/copy_AMS_config.js" />
-    -->
 
 </widget>

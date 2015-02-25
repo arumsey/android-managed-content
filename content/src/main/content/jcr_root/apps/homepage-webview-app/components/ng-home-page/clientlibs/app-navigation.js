@@ -1,18 +1,20 @@
 
-;(function (angular, undefined) {
+;(function (angular, contentUpdate, undefined) {
 
     "use strict";
 
     /**
      * Module to handle general navigation in the app
      */
-    angular.module('cqAppNavigation', ['cqContentSyncUpdate'])
+    angular.module('cqAppNavigation', ['btford.phonegap.ready'])
 
-        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout', 'cqContentSyncUpdate',
+        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout',
 
-            function ($scope, $window, $location, $timeout, cqContentSyncUpdate) {
+            function ($scope, $window, $location, $timeout) {
 
                 $scope.transition = '';
+                $scope.updating = false;
+                var contentUpdater = contentUpdate();
 
                 // Start a timeout
                 var timer = $timeout(function() {
@@ -34,27 +36,36 @@
                         ADB.trackTimedActionStart( 'updateAppTimed', {} );
                     }
 
-                    try {
-                        cqContentSyncUpdate.fetchAndApplyDeltaUpdate().then(
-                            function( result ) {
-                                $scope.updating = false;
-                            },
-                            function( rejection ) {
-                                // todo: display error
-                                console.error( rejection );
-                                $scope.updating = false;
+                    // Check if an update is available
+                    contentUpdater.isContentPackageUpdateAvailable($scope.contentPackageName,
+                        function callback(error, isUpdateAvailable) {
+                            if (error) {
+                                if( window.ADB ) {
+                                    ADB.trackAction( 'updateAppFailed', {} );
+                                }
+                                // Alert the error details.
+                                console.log(error);
+                                //return navigator.notification.alert(error, null, 'ContentSync Error');
                             }
-                        );
-                    } catch( err ) {
-                        console.log( 'Update Failed: ' + err );
-                        if( window.ADB ) {
-                            ADB.trackAction( 'updateAppFailed', {} );
-                        }
-                    }
 
-                    if( window.ADB ) {
-                        ADB.trackTimedActionEnd( 'updateAppTimed' );
-                    }
+                            if (isUpdateAvailable) {
+                                $scope.updating = true;
+                                contentUpdater.updateContentPackageByName($scope.contentPackageName,
+                                    function callback(error, pathToContent) {
+                                        if (error) {
+                                            return navigator.notification.alert(error, null, 'Error');
+                                        }
+                                        // else
+                                        console.log('Update complete; reloading app.');
+                                        $scope.updating = false;
+                                        if( window.ADB ) {
+                                            ADB.trackTimedActionEnd( 'updateAppTimed' );
+                                        }
+                                    });
+                            }
+                        }
+                    );
+
                 };
 
                 /**
@@ -68,4 +79,4 @@
             }
         ]);
 
-})(angular);
+})(angular, CQ.mobile.contentUpdate);
